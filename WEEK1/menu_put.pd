@@ -1,0 +1,66 @@
+#N canvas 1667 55 1853 1002 10;
+#X obj 74 152 +;
+#X text 31 34 Math operations will always be performed considering
+that the element from LEFT is the first input.;
+#X floatatom 29 116 5 0 0 0 - - -, f 5;
+#X floatatom 116 109 5 0 0 0 - - -, f 5;
+#X floatatom 65 199 5 0 0 0 - - -, f 5;
+#X floatatom 219 109 5 0 0 0 - - -, f 5;
+#X floatatom 306 102 5 0 0 0 - - -, f 5;
+#X floatatom 255 192 5 0 0 0 - - -, f 5;
+#X floatatom 57 269 5 0 0 0 - - -, f 5;
+#X floatatom 147 277 5 0 0 0 - - -, f 5;
+#X floatatom 96 367 5 0 0 0 - - -, f 5;
+#X floatatom 250 277 5 0 0 0 - - -, f 5;
+#X floatatom 337 270 5 0 0 0 - - -, f 5;
+#X floatatom 286 360 5 0 0 0 - - -, f 5;
+#X obj 105 320 -;
+#X obj 264 145 *;
+#X obj 295 313 /;
+#X text 396 83 If we wish to use constants \, messages should be used
+as arguments.;
+#X floatatom 489 135 5 0 0 0 - - -, f 5;
+#X floatatom 525 221 5 0 0 0 - - -, f 5;
+#X obj 534 174 *;
+#X msg 564 130 10;
+#X text 406 30 Priority Order: Result will change only when left input
+is changed.;
+#X text 411 260 Trick: You can change result when changing the right
+input. Use a bang!;
+#X floatatom 520 348 5 0 0 0 - - -, f 5;
+#X floatatom 556 434 5 0 0 0 - - -, f 5;
+#X obj 565 387 *;
+#X obj 525 304 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 597 345 5 0 0 0 - - -, f 5;
+#X floatatom 682 353 5 0 0 0 - - -, f 5;
+#X floatatom 769 346 5 0 0 0 - - -, f 5;
+#X floatatom 718 436 5 0 0 0 - - -, f 5;
+#X obj 688 293 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 727 389 +;
+#X connect 0 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 1;
+#X connect 5 0 15 0;
+#X connect 6 0 15 1;
+#X connect 8 0 14 0;
+#X connect 9 0 14 1;
+#X connect 11 0 16 0;
+#X connect 12 0 16 1;
+#X connect 14 0 10 0;
+#X connect 15 0 7 0;
+#X connect 16 0 13 0;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 1;
+#X connect 24 0 26 0;
+#X connect 26 0 25 0;
+#X connect 27 0 24 0;
+#X connect 28 0 26 1;
+#X connect 28 0 27 0;
+#X connect 29 0 33 0;
+#X connect 30 0 32 0;
+#X connect 30 0 33 1;
+#X connect 32 0 29 0;
+#X connect 33 0 31 0;
