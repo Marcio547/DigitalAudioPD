@@ -1,4 +1,4 @@
-#N canvas 1667 55 1853 1002 10;
+#N canvas 0 208 1600 849 10;
 #X obj 354 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 319 131 metro 2000;
@@ -25,7 +25,6 @@ the range (0 - (number-1);
 #X floatatom 489 503 5 0 0 0 - - -, f 5;
 #X text 308 432 1000 milliseconds / second;
 #X obj 456 544 metro;
-#X text 611 395 INPUT;
 #X text 620 437 ([INPUT] bits per minute) / (60 seconds per minute)
 ;
 #X text 610 461 Result: bits per second;
@@ -40,6 +39,7 @@ the range (0 - (number-1);
 #X text 608 343 bang to insert random input;
 #X obj 564 370 random 1000;
 #X text 518 542 metro sends signal each [right input] ms.;
+#X text 611 395 INPUT (bpm);
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 4 0 1 1;
@@ -55,7 +55,7 @@ the range (0 - (number-1);
 #X connect 16 0 14 0;
 #X connect 16 0 15 1;
 #X connect 17 0 19 1;
-#X connect 19 0 24 0;
-#X connect 25 0 19 0;
-#X connect 26 0 29 0;
-#X connect 29 0 13 0;
+#X connect 19 0 23 0;
+#X connect 24 0 19 0;
+#X connect 25 0 28 0;
+#X connect 28 0 13 0;

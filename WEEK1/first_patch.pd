@@ -1,16 +1,14 @@
-#N canvas 1667 55 1853 1002 10;
+#N canvas 200 314 1200 645 10;
 #X obj 161 203 osc~;
 #X obj 171 332 dac~;
 #X text 70 366 sends signal to audio card;
 #X floatatom 153 144 5 350 500 0 - - -, f 5;
-#X text 154 108 osc frequency;
 #X floatatom 279 114 5 0 1 0 - - -, f 5;
-#X text 336 113 amplitude control (range [0 \, 1]);
+#X text 261 70 amplitude control (range [0 \, 1]), f 17;
 #X obj 161 276 *~;
 #X obj 277 140 * 0.5;
 #X msg 216 137 220;
-#X text 303 163 safety;
-#X obj 359 168 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 369 180 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 328 208 \$1 20;
 #X obj 252 233 line~;
@@ -21,15 +19,20 @@
 #X text 372 353 goes from 0 -> 0.5 in 1000ms | 0.5 -> 0 in 2000ms;
 #X text 431 376 FADE IN;
 #X text 588 373 FADE OUT;
-#X text 338 138 drag holding SHIFT -> fine tuning;
-#X connect 0 0 7 0;
+#X text 321 113 drag holding SHIFT -> fine tuning;
+#X text 319 141 safety (avoid equipment and ear damage);
+#X text 384 229 used \$1 to change "1" by the value send by the slider
+;
+#X text 74 137 change osc frequency, f 11;
+#X text 191 87 send specific freq, f 8;
+#X connect 0 0 6 0;
 #X connect 3 0 0 0;
-#X connect 5 0 8 0;
-#X connect 7 0 1 1;
-#X connect 7 0 1 0;
-#X connect 9 0 0 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 15 0 7 1;
-#X connect 16 0 15 0;
-#X connect 17 0 15 0;
+#X connect 4 0 7 0;
+#X connect 6 0 1 1;
+#X connect 6 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 1;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
