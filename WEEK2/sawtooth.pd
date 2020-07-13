@@ -1,0 +1,8 @@
+#N canvas 0 208 1600 849 10;
+#X obj 47 93 metro 50;
+#X obj 47 118 tabwrite~ sawtooth;
+#X obj 183 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 199 129 phasor~;
+#X obj 216 203 line~;
+#X obj 186 251 *~;
