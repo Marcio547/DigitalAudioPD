@@ -1,4 +1,4 @@
-#N canvas 1667 55 1853 1002 10;
+#N canvas 0 189 1600 849 10;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array triangle_wave 100 float 1 black black;
 #A 0 -0.903177 -0.822116 -0.741055 -0.659993 -0.578932 -0.497871 -0.41681
@@ -46,14 +46,14 @@
 #X msg 415 149 0;
 #X text 446 149 phase;
 #X obj 285 625 metro 50;
-#X obj 285 601 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 285 601 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 346 659 tabwrite~ triangle_wave, f 13;
 #X obj 230 387 clip~ 0 1;
 #X obj 230 328 -~ 0.5;
 #X obj 230 355 *~ 2;
 #X obj 55 475 metro 50;
-#X obj 55 450 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 55 450 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 117 523 tabwrite~ sawtooth, f 9;
 #X obj 231 611 *~;
@@ -64,7 +64,7 @@
 #X obj 583 615 *~;
 #X obj 582 151 * -1;
 #X obj 210 695 vradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X obj 409 751 mux~ 1 2 3;
 #X obj 437 426 +~;
 #X floatatom 228 113 5 0 0 0 - - -, f 5;
@@ -73,15 +73,15 @@
 #X msg 163 30 440;
 #X obj 400 798 dac~;
 #X obj 228 57 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11350 1;
+-1 -1 0 1;
 #X text 624 514 mute;
 #X obj 623 571 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 750 1;
+-1 -1 0 1;
 #X msg 624 535 0;
 #X msg 668 535 0.5;
 #X text 247 487 mute;
 #X obj 246 567 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2050 1;
+-1 -1 0 1;
 #X msg 247 508 0;
 #X msg 291 508 0.5;
 #X text 59 29 enter frequency;
@@ -92,21 +92,21 @@
 #X obj 436 539 *~;
 #X text 502 420 mute;
 #X obj 502 488 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3600 1;
+-1 -1 0 1;
 #X msg 502 441 0;
 #X msg 546 441 0.5;
 #X obj 139 457 mux~ 1 2 3;
 #X obj 89 372 vradio 20 0 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 2;
+-1 0;
 #X obj 354 318 metro 50;
-#X obj 354 293 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 354 293 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 421 253 vradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X obj 354 354 tabwrite~ reverse_sawtooth, f 16;
 #X obj 421 318 mux~ 1 2 3;
 #X obj 348 461 vradio 17 0 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 0;
 #X text 19 414 after clip;
 #X text 23 395 doubling;
 #X text 8 375 center shift;
@@ -127,7 +127,7 @@ should be sent at the sime time., f 30;
 #X text 711 649 -1;
 #X text 740 22 use the buttons to observe each process step., f 29
 ;
-#X text 83 661 Seelct Audio Output;
+#X text 83 661 Select Audio Output;
 #X connect 3 0 10 0;
 #X connect 4 0 3 1;
 #X connect 4 0 16 1;
