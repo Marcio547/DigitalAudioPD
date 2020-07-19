@@ -1,0 +1,194 @@
+#N canvas 0 189 1600 849 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array square_wave 100 float 1 black black;
+#A 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 854 -524 graph;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array sawtooth 100 float 1 black black;
+#A 0 -0.331112 -0.316828 -0.302544 -0.28826 -0.273976 -0.259692 -0.245409
+-0.231125 -0.216841 -0.202557 -0.188273 -0.173989 -0.159705 -0.145421
+-0.131137 -0.116853 -0.102569 -0.0882854 -0.0740014 -0.0597175 -0.0454336
+-0.0311496 -0.0168657 -0.00258178 0.0117022 0.0259861 0.04027 0.0545539
+0.0688379 0.0831218 0.0974057 0.11169 0.125974 0.140258 0.154541 0.168825
+0.183109 0.197393 0.211677 0.225961 0.240245 0.254529 0.268813 0.283097
+0.297381 0.311665 0.325949 0.340232 0.354516 0.3688 0.383084 0.397368
+0.411652 0.425936 0.44022 0.454504 0.468788 0.483072 0.497356 -0.48836
+-0.474076 -0.459792 -0.445509 -0.431225 -0.416941 -0.402657 -0.388373
+-0.374089 -0.359805 -0.345521 -0.331237 -0.316953 -0.302669 -0.288385
+-0.274101 -0.259817 -0.245534 -0.23125 -0.216966 -0.202682 -0.188398
+-0.174114 -0.15983 -0.145546 -0.131262 -0.116978 -0.102694 -0.0884103
+-0.0741264 -0.0598425 -0.0455585 -0.0312746 -0.0169907 -0.00270674
+0.0115772 0.0258611 0.040145 0.054429 0.0687129 0.0829968;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 857 -955 graph;
+#N canvas 2389 439 450 323 (subpatch) 0;
+#X array reverse_sawtooth 100 float 1 black black;
+#A 0 -0.228773 -0.243057 -0.257341 -0.271625 -0.285909 -0.300193 -0.314476
+-0.32876 -0.343044 -0.357328 -0.371612 -0.385896 -0.40018 -0.414464
+-0.428748 -0.443032 -0.457316 -0.4716 -0.485884 0.499832 0.485549 0.471265
+0.456981 0.442697 0.428413 0.414129 0.399845 0.385561 0.371277 0.356993
+0.342709 0.328425 0.314141 0.299857 0.285574 0.27129 0.257006 0.242722
+0.228438 0.214154 0.19987 0.185586 0.171302 0.157018 0.142734 0.12845
+0.114166 0.0998825 0.0855985 0.0713146 0.0570307 0.0427467 0.0284628
+0.0141789 -0.000105053 -0.014389 -0.0286729 -0.0429568 -0.0572408 -0.0715247
+-0.0858086 -0.100093 -0.114376 -0.12866 -0.142944 -0.157228 -0.171512
+-0.185796 -0.20008 -0.214364 -0.228648 -0.242932 -0.257216 -0.2715
+-0.285784 -0.300068 -0.314351 -0.328635 -0.342919 -0.357203 -0.371487
+-0.385771 -0.400055 -0.414339 -0.428623 -0.442907 -0.457191 -0.471475
+-0.485759 0.499957 0.485673 0.47139 0.457106 0.442822 0.428538 0.414254
+0.39997 0.385686 0.371402 0.357118;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 854 -749 graph;
+#X obj 350 -798 phasor~;
+#X msg 389 -863 0;
+#X text 426 -862 phase;
+#X obj 405 -418 metro 50;
+#X obj 405 -442 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 350 -656 clip~ 0 1;
+#X obj 350 -715 -~ 0.5;
+#X obj 350 -688 *~ 2;
+#X obj 175 -568 metro 50;
+#X obj 175 -593 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 237 -520 tabwrite~ sawtooth, f 9;
+#X obj 351 -432 *~;
+#X obj 702 -837 phasor~;
+#X obj 702 -754 clip~ 0 1;
+#X obj 702 -806 -~ 0.5;
+#X obj 702 -780 *~ 2;
+#X obj 703 -428 *~;
+#X obj 702 -892 * -1;
+#X obj 330 -348 vradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 529 -292 mux~ 1 2 3;
+#X obj 557 -617 +~;
+#X floatatom 348 -930 5 0 0 0 - - -, f 5;
+#X obj 535 -956 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 283 -1013 440;
+#X obj 520 -245 dac~;
+#X obj 348 -986 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 8000 1;
+#X text 744 -529 mute;
+#X obj 743 -472 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 744 -508 0;
+#X msg 788 -508 0.5;
+#X text 367 -556 mute;
+#X obj 366 -476 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 367 -535 0;
+#X msg 411 -535 0.5;
+#X text 179 -1014 enter frequency;
+#X text 284 -936 freq. monitor, f 8;
+#X text 204 -355 sawtooth;
+#X text 204 -315 reverse sawtooth;
+#X obj 556 -504 *~;
+#X text 622 -623 mute;
+#X obj 622 -555 hsl 37 16 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 622 -602 0;
+#X msg 666 -602 0.5;
+#X obj 259 -586 mux~ 1 2 3;
+#X obj 209 -671 vradio 20 0 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 474 -725 metro 50;
+#X obj 474 -750 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 541 -790 vradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 474 -689 tabwrite~ reverse_sawtooth, f 16;
+#X obj 541 -725 mux~ 1 2 3;
+#X obj 468 -582 vradio 17 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 139 -629 after clip;
+#X text 143 -648 doubling;
+#X text 128 -668 center shift;
+#X obj 468 -469 mux~ 1 2 3 4;
+#X text 831 -756 +1;
+#X text 831 -619 -1;
+#X text 837 -964 +1;
+#X text 837 -827 -1;
+#X text 511 -813 show each step;
+#X obj 557 -593 -~ 0.5;
+#X obj 557 -569 *~ 2;
+#X text 831 -531 +1;
+#X text 831 -394 -1;
+#X text 860 -1021 use the buttons to observe each process step., f
+29;
+#X text 203 -382 Seelct Audio Output;
+#X text 563 -973 for the square wave \, one of the waves should have
+a phase displacement., f 30;
+#X msg 741 -906 0.5;
+#X text 204 -335 square wave;
+#X obj 466 -384 tabwrite~ square_wave, f 13;
+#X text 778 -907 phase;
+#X text 817 -344 A square wave can be obtained from the sum of two
+sawtooth waves - one of them should be reversed towards the other \,
+and there should be a phase difference between the two sawtooth waves.
+;
+#X connect 3 0 9 0;
+#X connect 4 0 3 1;
+#X connect 6 0 72 0;
+#X connect 7 0 6 0;
+#X connect 8 0 14 0;
+#X connect 8 0 23 0;
+#X connect 8 0 46 2;
+#X connect 9 0 10 0;
+#X connect 9 0 46 0;
+#X connect 10 0 8 0;
+#X connect 10 0 46 1;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 14 0 22 0;
+#X connect 15 0 17 0;
+#X connect 16 0 19 0;
+#X connect 16 0 23 1;
+#X connect 16 0 52 2;
+#X connect 17 0 18 0;
+#X connect 17 0 52 0;
+#X connect 18 0 16 0;
+#X connect 18 0 52 1;
+#X connect 19 0 22 2;
+#X connect 20 0 15 0;
+#X connect 21 0 22 0;
+#X connect 22 0 27 0;
+#X connect 22 0 27 1;
+#X connect 23 0 57 0;
+#X connect 23 0 63 0;
+#X connect 24 0 3 0;
+#X connect 24 0 20 0;
+#X connect 25 0 4 0;
+#X connect 25 0 70 0;
+#X connect 26 0 28 0;
+#X connect 28 0 24 0;
+#X connect 28 0 25 0;
+#X connect 30 0 19 1;
+#X connect 31 0 30 0;
+#X connect 32 0 30 0;
+#X connect 34 0 14 1;
+#X connect 35 0 34 0;
+#X connect 36 0 34 0;
+#X connect 41 0 22 1;
+#X connect 41 0 57 3;
+#X connect 43 0 41 1;
+#X connect 44 0 43 0;
+#X connect 45 0 43 0;
+#X connect 46 0 13 0;
+#X connect 47 0 46 0;
+#X connect 48 0 51 0;
+#X connect 49 0 48 0;
+#X connect 50 0 52 0;
+#X connect 52 0 51 0;
+#X connect 53 0 57 0;
+#X connect 57 0 72 0;
+#X connect 63 0 57 1;
+#X connect 63 0 64 0;
+#X connect 64 0 41 0;
+#X connect 64 0 57 2;
+#X connect 70 0 15 1;
