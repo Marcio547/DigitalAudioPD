@@ -1,0 +1,110 @@
+#N canvas 1667 55 1853 1002 10;
+#X obj 333 390 metro 50;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array subtractive_synthesis 100 float 1 black black;
+#A 0 0.000512452 0.000508619 0.000502796 0.000495045 0.000485849 0.000475009
+0.000462814 0.000449328 0.00043393 0.00041717 0.000398366 0.000377743
+0.000355419 0.000332038 0.000307324 0.000282143 0.000255859 0.00022919
+0.000201585 0.000172911 0.000143333 0.000113084 8.28871e-05 5.19526e-05
+2.08771e-05 -1.06116e-05 -4.2684e-05 -7.38725e-05 -0.000104048 -0.000133936
+-0.000162712 -0.000190995 -0.000218165 -0.000244994 -0.000270741 -0.000295271
+-0.000318189 -0.000339312 -0.00035845 -0.000376128 -0.000392537 -0.000407022
+-0.000420232 -0.000432329 -0.000443339 -0.000453116 -0.000460777 -0.000466434
+-0.000471012 -0.000473117 -0.000473036 -0.000470494 -0.000466716 -0.000460567
+-0.000452185 -0.000442165 -0.000429918 -0.000415352 -0.000398848 -0.000381246
+-0.000362628 -0.000343121 -0.000322105 -0.000300458 -0.000277259 -0.000253433
+-0.000228263 -0.000202533 -0.0001765 -0.000149187 -0.000120584 -9.21428e-05
+-6.2897e-05 -3.39804e-05 -5.48951e-06 2.37414e-05 5.30194e-05 8.15013e-05
+0.000109025 0.000136585 0.000163268 0.000189606 0.000215044 0.000239508
+0.000263589 0.000287378 0.000310783 0.00033274 0.000352762 0.000371119
+0.000387788 0.000403538 0.000417886 0.000430405 0.000441458 0.000450518
+0.000458444 0.000464695 0.000469043 0.000471556;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 554 29 graph;
+#X obj 333 362 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 333 416 tabwrite~ subtractive_synthesis;
+#X obj 166 446 dac~;
+#X obj 177 410 *~;
+#X text 250 153 generates white noise, f 12;
+#X obj 312 226 hip~, f 5;
+#X floatatom 339 129 5 0 0 0 - - -, f 5;
+#X msg 209 358 \$1 20;
+#X obj 209 332 hsl 47 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 450 1;
+#X obj 209 385 line~;
+#X obj 356 225 lop~;
+#X floatatom 378 129 5 0 0 0 - - -, f 5;
+#X obj 403 225 bp~;
+#X floatatom 417 129 5 0 0 0 - - -, f 5;
+#X floatatom 453 185 5 0 0 0 - - -, f 5;
+#X obj 453 121 vsl 12 42 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4100 1;
+#X obj 147 132 osc~;
+#X obj 240 132 noise~;
+#X obj 175 179 mux~ 1 2 3;
+#X obj 147 49 hsl 46 14 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1980 1;
+#X obj 112 248 hradio 15 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 65 148 hradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144 -1
+-1 2;
+#X text 29 30 choose freq for sine and sawtooth, f 14;
+#X floatatom 147 71 5 0 0 0 - - -, f 5;
+#X obj 175 276 mux~ 1 2 3 4, f 13;
+#X text 473 135 q factor;
+#X text 22 226 1 - no filter;
+#X text 22 249 2 - high pass;
+#X text 22 273 3- low pass;
+#X text 22 297 4- band pass;
+#X obj 416 84 hsl 48 17 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2068 1;
+#X obj 346 86 hsl 46 15 0 10000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 198 1;
+#X text 416 43 center frequency, f 9;
+#X text 276 78 cutoff frequency, f 9;
+#X msg 209 305 0;
+#X text 242 305 mute;
+#X msg 263 9 440;
+#X obj 188 132 -~ 0.5;
+#X obj 188 100 phasor~;
+#X text 498 185 q factor = center frequency / bandwidth;
+#X text 470 213 for very high values of Q \, applying a bandpass filter
+to a white noise will allow only the center frequency to pass.;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 5 0 3 0;
+#X connect 7 0 26 1;
+#X connect 8 0 7 1;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 5 1;
+#X connect 12 0 26 2;
+#X connect 13 0 12 1;
+#X connect 14 0 26 3;
+#X connect 15 0 14 1;
+#X connect 16 0 14 2;
+#X connect 17 0 16 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 2;
+#X connect 20 0 7 0;
+#X connect 20 0 12 0;
+#X connect 20 0 14 0;
+#X connect 20 0 26 0;
+#X connect 21 0 25 0;
+#X connect 22 0 26 0;
+#X connect 23 0 20 0;
+#X connect 25 0 18 0;
+#X connect 25 0 40 0;
+#X connect 26 0 5 0;
+#X connect 32 0 15 0;
+#X connect 33 0 8 0;
+#X connect 33 0 13 0;
+#X connect 36 0 10 0;
+#X connect 38 0 21 0;
+#X connect 38 0 33 0;
+#X connect 38 0 32 0;
+#X connect 39 0 20 1;
+#X connect 40 0 39 0;
