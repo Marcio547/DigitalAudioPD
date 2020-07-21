@@ -1,0 +1,72 @@
+#N canvas 2237 235 959 789 10;
+#X obj 195 323 hsl 39 14 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 800 1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array frequency_modulation 100 float 3 black black;
+#A 0 0.106031 0.106532 0.107078 0.107673 0.108323 0.109028 0.109799
+0.110638 0.111547 0.112536 0.113602 0.114756 0.115995 0.117328 0.118754
+0.120277 0.121901 0.123628 0.125458 0.127391 0.12943 0.131575 0.133824
+0.136176 0.138632 0.141189 0.143841 0.146587 0.14942 0.152337 0.155326
+0.158385 0.161502 0.164668 0.167871 0.171097 0.174334 0.177568 0.18078
+0.18395 0.187063 0.190093 0.193018 0.195817 0.198462 0.200926 0.203178
+0.205191 0.206935 0.208369 0.209469 0.210193 0.210513 0.210388 0.209782
+0.208663 0.206994 0.204739 0.201865 0.198345 0.194142 0.189237 0.183597
+0.177208 0.170053 0.162119 0.153399 0.143893 0.133609 0.122552 0.110749
+0.0982238 0.0850143 0.0711621 0.0567202 0.0417511 0.0263249 0.0105208
+-0.00557328 -0.0218605 -0.0382372 -0.0545901 -0.0708029 -0.0867478
+-0.102299 -0.117322 -0.131683 -0.145244 -0.157869 -0.169425 -0.179784
+-0.188824 -0.19643 -0.202486 -0.20691 -0.209609 -0.210526 -0.209597
+-0.206799 -0.202116;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 284 56 graph;
+#X obj 181 462 tabwrite~ frequency_modulation;
+#X obj 181 412 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 181 435 metro 50;
+#X obj 187 367 line~;
+#X msg 195 344 \$1 20;
+#X obj 83 430 *~;
+#X obj 74 459 dac~;
+#X obj 83 249 osc~;
+#X obj 143 119 osc~;
+#X obj 143 157 *~;
+#X floatatom 143 87 5 0 0 0 - - -, f 5;
+#X floatatom 83 169 5 0 0 0 - - -, f 5;
+#X floatatom 181 130 5 0 0 0 - - -, f 5;
+#X obj 83 138 hsl 39 14 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1400 1;
+#X obj 143 63 hsl 39 14 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 650 1;
+#X obj 83 207 +~;
+#X obj 181 103 hsl 39 14 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1350 1;
+#X text 11 247 carrier oscillator, f 10;
+#X text 63 99 carrier frequency, f 10;
+#X text 251 266 the carrier audio signal is modulated by another signal
+(the modulator signal).;
+#X text 249 217 Frequency Modulation Synthesis is used to make periodic
+changes to the frequency of an oscillator.;
+#X text 121 200 add modulator to carrier frequency, f 13;
+#X text 133 24 modulator frequency, f 11;
+#X text 188 153 amount of modulation, f 10;
+#X msg 195 295 0;
+#X text 161 296 mute;
+#X connect 0 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 7 1;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 0 8 1;
+#X connect 7 0 2 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 17 1;
+#X connect 12 0 10 0;
+#X connect 13 0 17 0;
+#X connect 14 0 11 1;
+#X connect 15 0 13 0;
+#X connect 16 0 12 0;
+#X connect 17 0 9 0;
+#X connect 18 0 14 0;
+#X connect 26 0 0 0;
