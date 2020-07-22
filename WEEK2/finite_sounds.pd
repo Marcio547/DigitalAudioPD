@@ -1,0 +1,39 @@
+#N canvas 1655 55 1865 1002 10;
+#X obj 92 119 osc~;
+#X obj 199 262 metro 50;
+#X obj 199 287 tabwrite~ sinewave;
+#X obj 199 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 92 265 *~;
+#X floatatom 92 62 5 0 0 0 - - -, f 5;
+#X obj 139 156 line~;
+#X obj 139 105 bng 12 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 139 128 1 \, 0 2000;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array sinewave 100 float 3 black black;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 347 214 graph;
+#X text 210 105 passing messages to line object;
+#X text 208 129 max value 1 \, min value 0 duration 2000ms;
+#X obj 71 319 output~;
+#X text 27 370 output object has its own volume control and toggle
+DSP on/off, f 21;
+#X text 181 156 it can be used for building a synthetizer with finite
+notes.;
+#X text 150 76 click to start note;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 0 12 0;
+#X connect 4 0 12 1;
+#X connect 5 0 7 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 1;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
